@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
-@ControllerAdvice(basePackages = "com.rtech.gerenciamentoFresadora.controllers.UserController")
-public class UserControllerAdvice {
+@ControllerAdvice(basePackages = "com.rtech.gerenciamentoFresadora.controllers.ClientController")
+public class ClientControllerAdvice {
 
     @ResponseBody
-    @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<MessageExceptionHandler> userNotFound(UserNotFoundException userNotFound){
+    @ExceptionHandler(ClientNotFoundException.class)
+    public ResponseEntity<MessageExceptionHandler> clientNotFound(ClientNotFoundException clientNotFound){
         MessageExceptionHandler error = new MessageExceptionHandler(
-                new Date(), HttpStatus.NOT_FOUND.value(), "User not found");
+                new Date(), HttpStatus.NOT_FOUND.value(), "Client not found");
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 

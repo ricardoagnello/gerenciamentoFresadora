@@ -36,16 +36,14 @@ public class UserController {
 
     //UPDATE USER
     @PutMapping("/updateUser/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User userDetails){
+    public User updateUser(@PathVariable Long id, @RequestBody User userDetails) {
         getUserById(id);
         return userService.updateUser(id, userDetails);
     }
 
-
-
     //DELETE USER
     @DeleteMapping("/deleteUser/{id}")
-    public void deleteUser(@PathVariable Long id){
+    public void deleteUser(@PathVariable Long id) {
         getUserById(id);
         userService.deleteUser(id);
     }
